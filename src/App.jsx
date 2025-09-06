@@ -1,33 +1,83 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Layout from './components/Layout/Layout';
+import { selectIsRefreshing } from './redux/auth/selectors';
+import { selectIsLoading } from './redux/loading/selector';
+import { useSelector } from 'react-redux';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { lazy } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const isRefreshing = useSelector(selectIsRefreshing);
+  const isLoading = useSelector(selectIsLoading);
 
-  return (
+  const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
+  const RegistrationPage = lazy(() => import('./pages/RegistrationPage/RegistrationPage'));
+  const LoginPage = lazy(() => import('./pages/LoginPage/LoginPage'));
+  const RecepiesPage = lazy(() => import('./pages/RecepiesPage/RecepiesPage'));
+  const OneRecipePage = lazy(() => import('./pages/OneRecipePage/OneRecipePage.jsx'));
+  const MyProfile = lazy(() => import('./pages/MyProfile/MyProfile.jsx'));
+  const SavedRecepiesPage = lazy(() => import('./pages/SavedRecepiesPage/SavedRecepiesPage.jsx'));
+  const MyRecepiesPage = lazy(() => import('./pages/MyRecepiesPage/MyRecepiesPage.jsx'));
+  const CreateRecepiesPage = lazy(() => import('./pages/CreateRecepiesPage/CreateRecepiesPage.jsx'));
+  const NotFoundPage = lazy(() => import('./pages/NotFoundPage/NotFoundPage.jsx'))
+  return isRefreshing ? (
+    <Loader />
+  ) : (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {isLoading && <Loader />}
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+
+          <Route
+            path="register"
+            element={
+              <RestrictedRoute component={<RegistrationPage />} redirectTo="/" />
+            }
+          />
+          <Route
+            path="login"
+            element={
+              <RestrictedRoute component={<LoginPage />} redirectTo="/" />
+            }
+          />
+
+          <Route path="recepies" element={<RecepiesPage />} />
+          <Route path="recepies/:recepiesId" element={<OneRecipePage />} />
+
+          <Route
+            path="profile"
+            element={
+              <PrivateRoute component={<MyProfile />} redirectTo="/login" />
+            }
+          >
+            <Route index element={<Navigate to="my-recepies" replace />} />
+            <Route path="my-recepies" element={<MyRecepiesPage />} />
+            <Route path="saved" element={<SavedRecepiesPage />} />
+          </Route>
+
+          <Route
+            path="create"
+            element={
+              <PrivateRoute
+                component={<CreateRecepiesPage />}
+                redirectTo="/login"
+              />
+            }
+          />
+
+          <Route
+            path="create/:recepieId"
+            element={
+              <PrivateRoute
+                component={<CreateRecepiesPage />}
+                redirectTo="/login"
+              />
+            }
+          />
+        </Route>
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
     </>
   )
 }
