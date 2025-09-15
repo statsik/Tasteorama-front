@@ -1,9 +1,9 @@
 import css from './Loader.module.css';
 
-const Loader = () => {
+const LoginForm = () => {
     return (
         <></>
     )
 }
 
-export default Loader;
+export default LoginForm;
