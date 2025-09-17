@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import s from './UserMenu.module.css';
 import { NavLink } from 'react-router-dom';
-import { openModal } from '../../redux/modal/slice';
+import { openModal } from '../../redux/model/slice';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUser } from '../../redux/auth/selectors';
 

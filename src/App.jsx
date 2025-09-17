@@ -3,7 +3,7 @@ import { selectIsRefreshing } from './redux/auth/selectors';
 import { selectIsLoading } from './redux/loading/selector.js';
 import { useSelector } from 'react-redux';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { lazy, Suspense } from "react";
+import { lazy } from "react";
 import RestrictedRoute from "./components/Routes/RestrictedRoute.jsx";
 import PrivateRoute from "./components/Routes/PrivateRoute.jsx";
 
@@ -26,8 +26,7 @@ function App() {
   ) : (
     <>
       {isLoading && <Loader />}
-      <Suspense>
-        <Routes>
+      <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
 
@@ -80,8 +79,6 @@ function App() {
           </Route>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
-      </Suspense>
-      
     </>
   )
 }

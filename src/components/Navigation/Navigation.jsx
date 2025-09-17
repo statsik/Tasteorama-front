@@ -12,7 +12,7 @@ const Navigation = () => {
   return (
     <nav className={clsx(css["nav"])}>
         <Link to="/">
-            <img src="/logo.svg" alt="Logo" className={clsx(css["logo"])} />
+            <img src="/public/images/logo.svg" alt="Logo" className={clsx(css["logo"])} />
         </Link>
         <NavLink to='/recipes' className={clsx(css["recipes-nav"])}>
             Recipes

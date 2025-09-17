@@ -1,4 +1,6 @@
 import css from './Header.module.css';
+import Container from '../Container/Container';
+import Navigation from '../Navigation/Navigation';
 
 const Header = () => {
     return (
