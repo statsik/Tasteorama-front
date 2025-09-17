@@ -1,4 +1,4 @@
-import css './Layout.module.css';
+import css from './Layout.module.css';
 
 const Layout = () => {
     return (

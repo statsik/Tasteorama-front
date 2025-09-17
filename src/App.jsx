@@ -1,10 +1,11 @@
-import './App.css'
 import Layout from './components/Layout/Layout';
 import { selectIsRefreshing } from './redux/auth/selectors';
-import { selectIsLoading } from './redux/loading/selector';
+import { selectIsLoading } from './redux/loading/selector.js';
 import { useSelector } from 'react-redux';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { lazy } from "react";
+import { lazy, Suspense } from "react";
+import RestrictedRoute from "./components/Routes/RestrictedRoute.jsx";
+import PrivateRoute from "./components/Routes/PrivateRoute.jsx";
 
 function App() {
   const isRefreshing = useSelector(selectIsRefreshing);
@@ -25,59 +26,62 @@ function App() {
   ) : (
     <>
       {isLoading && <Loader />}
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
+      <Suspense>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomePage />} />
 
-          <Route
-            path="register"
-            element={
-              <RestrictedRoute component={<RegistrationPage />} redirectTo="/" />
-            }
-          />
-          <Route
-            path="login"
-            element={
-              <RestrictedRoute component={<LoginPage />} redirectTo="/" />
-            }
-          />
+            <Route
+              path="register"
+              element={
+                <RestrictedRoute component={<RegistrationPage />} redirectTo="/" />
+              }
+            />
+            <Route
+              path="login"
+              element={
+                <RestrictedRoute component={<LoginPage />} redirectTo="/" />
+              }
+            />
 
-          <Route path="recepies" element={<RecepiesPage />} />
-          <Route path="recepies/:recepiesId" element={<OneRecipePage />} />
+            <Route path="recepies" element={<RecepiesPage />} />
+            <Route path="recepies/:recepiesId" element={<OneRecipePage />} />
 
-          <Route
-            path="profile"
-            element={
-              <PrivateRoute component={<MyProfile />} redirectTo="/login" />
-            }
-          >
-            <Route index element={<Navigate to="my-recepies" replace />} />
-            <Route path="my-recepies" element={<MyRecepiesPage />} />
-            <Route path="saved" element={<SavedRecepiesPage />} />
+            <Route
+              path="profile"
+              element={
+                <PrivateRoute component={<MyProfile />} redirectTo="/login" />
+              }
+            >
+              <Route index element={<Navigate to="my-recepies" replace />} />
+              <Route path="my-recepies" element={<MyRecepiesPage />} />
+              <Route path="saved" element={<SavedRecepiesPage />} />
+            </Route>
+
+            <Route
+              path="create"
+              element={
+                <PrivateRoute
+                  component={<CreateRecepiesPage />}
+                  redirectTo="/login"
+                />
+              }
+            />
+
+            <Route
+              path="create/:recepieId"
+              element={
+                <PrivateRoute
+                  component={<CreateRecepiesPage />}
+                  redirectTo="/login"
+                />
+              }
+            />
           </Route>
-
-          <Route
-            path="create"
-            element={
-              <PrivateRoute
-                component={<CreateRecepiesPage />}
-                redirectTo="/login"
-              />
-            }
-          />
-
-          <Route
-            path="create/:recepieId"
-            element={
-              <PrivateRoute
-                component={<CreateRecepiesPage />}
-                redirectTo="/login"
-              />
-            }
-          />
-        </Route>
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Suspense>
+      
     </>
   )
 }
