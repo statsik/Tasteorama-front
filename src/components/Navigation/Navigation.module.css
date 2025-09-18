@@ -1,0 +1,30 @@
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-recipes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-recipes{
+    display: flex;
+    justify-content: space-between;
+}
+.linkUserMenuAuthNavContainer{
+    display: flex;
+    display: none;
+}
+.nav-burger{
+    display: flex;
+}
+
+@media (min-width: 768px) {
+    .linkUserMenuAuthNavContainer{
+        display: flex;
+    }
+    .nav-burger{
+        display: none;
+    }   
+}

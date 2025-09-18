@@ -11,13 +11,20 @@ const Navigation = () => {
 
   return (
     <nav className={clsx(css["nav"])}>
+      <div className={clsx(css["nav-recipes"])}>
         <Link to="/">
-            <img src="/public/images/logo.svg" alt="Logo" className={clsx(css["logo"])} />
+            <img src="/images/logo.svg" alt="Logo" className={clsx(css["logo"])} />
         </Link>
+      </div>
+      <button className={clsx(css["nav-burger"])}>
+        <svg width="24" height="24">
+          <use href="/public/icons/icons-tasteorama.svg#icon-burger-regular"></use>
+        </svg>
+      </button>
+      <div className={clsx(css.linkUserMenuAuthNavContainer)}>
         <NavLink to='/recipes' className={clsx(css["recipes-nav"])}>
             Recipes
         </NavLink>
-      <div className={clsx(css.linkUserMenuAuthNavContainer)}>
         {isLoggedIn ? <UserMenu /> : <AuthNav />}
       </div>
     </nav>
