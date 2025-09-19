@@ -9,7 +9,7 @@ import { selectIsLoggedIn } from '../../redux/auth/selectors';
 const Navigation = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
-  return (
+  return ( 
     <nav className={clsx(css["nav"])}>
       <div className={clsx(css["nav-recipes"])}>
         <Link to="/">

@@ -1,14 +1,15 @@
 .container{
     width: 100%;
-    padding: 16px 0;
+    padding: 0 16px;
+    box-sizing: border-box;
 }
 @media only screen and (min-width: 768px) {
   .container {
-    padding: 48px 34px;
+    padding: 0 34px;
   }
 }
 @media only screen and (min-width: 1440px) {
   .container {
-    padding: 48px 107.5px;
+    padding: 0 107.5px;
   }
 }

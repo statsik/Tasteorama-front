@@ -12,7 +12,7 @@ const AuthNav = () => {
       <NavLink to='/login' className={handleActiveClass}>
         Log in
       </NavLink>
-      <NavLink to='/register' className={clsx(css['RegisterLink'])}>
+      <NavLink to='/register' className={clsx(css['register-link'])}>
         Register
       </NavLink>
     </div>

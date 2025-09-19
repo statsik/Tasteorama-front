@@ -1,0 +1,19 @@
+.auth-nav-wrapper{
+    color:var(--header-color);
+}
+.register-link{
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    padding: 12px 16px;
+    border: 1px solid rgba(155, 108, 67, 1);
+    background-color: rgba(155, 108, 67, 1);
+    border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+    .navLink{
+        margin-right: 16px;
+    }
+}

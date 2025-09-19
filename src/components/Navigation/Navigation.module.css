@@ -2,29 +2,32 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-.nav-recipes{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.nav-recipes{
-    display: flex;
-    justify-content: space-between;
+    color: var(--header-color);
+    font-family: var(--font-family);
 }
 .linkUserMenuAuthNavContainer{
-    display: flex;
     display: none;
 }
 .nav-burger{
     display: flex;
+    background-color: inherit;
+    color: azure;
+}
+.logo{
+    width: 165px;
+    height: 46px;
 }
 
 @media (min-width: 768px) {
     .linkUserMenuAuthNavContainer{
         display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .nav-burger{
         display: none;
     }   
+    .recipes-nav{
+        margin-right: 32px;
+    }
 }
