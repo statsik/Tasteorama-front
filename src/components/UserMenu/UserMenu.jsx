@@ -1,38 +1,32 @@
 import clsx from 'clsx';
-import s from './UserMenu.module.css';
+import css from './UserMenu.module.css';
 import { NavLink } from 'react-router-dom';
-import { openModal } from '../../redux/model/slice';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { selectUser } from '../../redux/auth/selectors';
 
+
 const handleActiveClass = ({ isActive }) => {
-  return clsx(s.navLink, isActive && s.active);
+  return clsx(css.navLink, isActive && css.active);
 };
 
 const UserMenu = () => {
   const { name, avatarUrl } = useSelector(selectUser);
 
-  const dispatch = useDispatch();
-
-  const handleOpenConfirmExitModal = () => {
-    dispatch(openModal({ type: 'modalLogoutConfirm' }));
-  };
-
   return (
-    <>
-      <NavLink to="/profile" className={handleActiveClass}>
-        My Profile
-      </NavLink>
-      <NavLink to="/create" className={clsx(s.createLink)}>
-        Add Recipe
-      </NavLink>
-
-      <div className={clsx(s.avatarContainer)}>
-        <div className={clsx(s.avatarNameContainer)}>
+    <div className={css["user-menu-wrapper"]}>
+      <div className="user-menu-links">
+        <NavLink to="/profile" className={handleActiveClass}>
+          My Profile
+        </NavLink>
+        <NavLink to="/create" className={clsx(css.createLink)}>
+          Add Recipe
+        </NavLink>
+      </div>  
+      <div className={clsx(css.avatarNameContainer)}>
           {avatarUrl ? (
-            <img className={s.avatar} src={avatarUrl} alt={name} />
+            <img className={css.avatar} src={avatarUrl} alt={name} />
           ) : (
-            <div className={s.fallbackAvatar}>
+            <div className={css.fallbackAvatar}>
               {name
                 ?.split(' ')
                 .map((n) => n[0])
@@ -40,25 +34,14 @@ const UserMenu = () => {
                 .toUpperCase()}
             </div>
           )}
-          <p className={clsx(s.name)}>{name}</p>
+          <p className={clsx(css.name)}>{name}</p>
         </div>
-        <button
-          onClick={handleOpenConfirmExitModal}
-          type="button"
-          className={clsx(s.exitButton)}
-          aria-label="Exit from account"
-        >
-          <svg
-            width={24}
-            height={24}
-            className={clsx(s.exitIcon)}
-            aria-hidden="true"
-          >
-            <use href="/icons.svg#icon-exit"></use>
+        <button className={clsx(css.exitButton)}>
+          <svg width="24" height="24">
+            <use href="/public/icons/icons-tasteorama.svg#icon-icon-exit"></use>
           </svg>
         </button>
       </div>
-    </>
   );
 };
 

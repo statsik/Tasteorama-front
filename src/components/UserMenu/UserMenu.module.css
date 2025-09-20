@@ -1,0 +1,28 @@
+.user-menu-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+}
+
+.navLink{
+    margin-right: 32px;
+}
+.exitButton{
+    background-color: #0000; 
+    color: azure;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.createLink{
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    padding: 12px 16px;
+    border: 1px solid rgba(155, 108, 67, 1);
+    background-color: rgba(155, 108, 67, 1);
+    border-radius: 10px;
+}

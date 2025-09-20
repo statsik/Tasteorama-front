@@ -4,6 +4,7 @@
     align-items: center;
     color: var(--header-color);
     font-family: var(--font-family);
+    font-size: 12px;
 }
 .linkUserMenuAuthNavContainer{
     display: none;
