@@ -1,8 +1,10 @@
 import clsx from 'clsx';
 import css from './UserMenu.module.css';
 import { NavLink } from 'react-router-dom';
+// import { openModal } from '../../redux/model/slice';
 import { useSelector } from 'react-redux';
 import { selectUser } from '../../redux/auth/selectors';
+// import { useDispatch } from 'react-redux';
 
 
 const handleActiveClass = ({ isActive }) => {
@@ -11,6 +13,12 @@ const handleActiveClass = ({ isActive }) => {
 
 const UserMenu = () => {
   const { name, avatarUrl } = useSelector(selectUser);
+
+  // const dispatch = useDispatch();
+
+  // const handleOpenConfirmExitModal = () => {
+  //   dispatch(openModal({ type: 'modalLogoutConfirm' }));
+  // };
 
   return (
     <div className={css["user-menu-wrapper"]}>
@@ -22,7 +30,7 @@ const UserMenu = () => {
           Add Recipe
         </NavLink>
       </div>  
-      <div className={clsx(css.avatarNameContainer)}>
+        <div className={clsx(css.avatarNameContainer)}>
           {avatarUrl ? (
             <img className={css.avatar} src={avatarUrl} alt={name} />
           ) : (

@@ -3,12 +3,12 @@ import css from './Navigation.module.css';
 import { NavLink, Link } from 'react-router-dom';
 import UserMenu from '../UserMenu/UserMenu';
 import AuthNav from '../AuthNav/AuthNav';
-// import { useSelector } from 'react-redux';
-// import { selectIsLoggedIn } from '../../redux/auth/selectors';
+import { useSelector } from 'react-redux';
+  import { selectIsLoggedIn } from '../../redux/auth/selectors';
 
 const Navigation = () => {
-  //const isLoggedIn = useSelector(selectIsLoggedIn);
-  const isLoggedIn = true;
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+  //const isLoggedIn = true;
 
   return ( 
     <nav className={clsx(css["nav"])}>

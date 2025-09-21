@@ -1,0 +1,209 @@
+.registerContainer {
+  position: relative;
+  width: 100%;
+  background-color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-title-reg);
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 155%;
+  letter-spacing: 0%;
+  text-align: center;
+
+}
+
+.registrationCard {
+  width: 100%;
+  max-width: 362px;
+  background-color: var(--background-color-reg);
+  border-radius: 32px;
+  margin: 56px 0;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 48px 32px;
+}
+
+.title {
+  align-self: stretch;
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+}
+
+.subtitle {
+  width: 298px;
+  text-align: center;
+  margin: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+  align-self: stretch;
+  width: 100%;
+}
+
+.formFields {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 26px;
+  align-self: stretch;
+  width: 100%;
+}
+
+.labelInputContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  width: 100%;
+}
+
+.label {
+  align-self: stretch;
+  align-items: flex-start;
+  font-size: 12px;
+  letter-spacing: 0px;
+}
+
+.input {
+  background-color: var(--background-color-inp);
+  border: 1px solid var(--color-border);
+  line-height: 1.5;
+  color: var(--color-text-input);
+  width: 100%;
+  padding: 8px 8px;
+  border-radius: 6px;
+}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+
+.input:focus {
+  outline: none;
+  border-color: #649179;
+}
+
+.inputError {
+  border: 1px solid var(--error-border-color);
+}
+
+/*******PasswordStrengthBar********/
+
+.passwordStrength {
+  width: 100%;
+  max-width: 100%;
+  height: 0.15rem;
+  margin: -8px 0 1px 0;
+}
+
+.error {
+  font-size: 12px;
+  color: var(--error-text-color);
+  top: 100%;
+  position: absolute;
+}
+
+.passwordField {
+  position: relative;
+  width: 100%;
+}
+
+.passwordInput {
+  background-color: var(--background-color);
+  border: 1px solid #9f9f9f;
+  line-height: 1.5;
+  color: #595d62;
+  width: 100%;
+  padding: 8px 40px 8px 12px;
+  border-radius: 6px;
+}
+
+.passwordInput:focus {
+  outline: none;
+  border-color: #649179;
+}
+
+.eyeIcon {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  stroke: var(--secondary-icon-fill);
+  fill: none;
+  cursor: pointer;
+}
+
+.registrationButton {
+  width: 100%;
+  font-size: 16px;
+  background-color: var(--color-back-reg-but);
+  color: var(--color-text-but-reg);
+  font-weight: 700; 
+  padding: 8px;
+  border: 1px solid #9f9f9f;
+  border-radius: 6px;
+}
+
+.registrationButton:disabled {
+  background: var(--color-back-reg-but);
+}
+
+.registrationButton:hover {
+  background: var(--color-back-reg-but);
+  transition: var(--transition);
+}
+
+.loginPrompt {
+  align-self: stretch;
+  color: #070721;
+  text-align: center;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.loginLinkBottom {
+  font-weight: 700;
+  text-decoration: underline;
+  color: #070721;
+  transition: var(--transition);
+}
+
+.loginLinkBottom:hover,
+.loginLinkBottom:focus {
+  color: var(--button-bg-main-hover);
+  opacity: 0.5;
+}
+
+.error {
+  font-size: 12px;
+  color: var(--error-text-color); 
+  position: absolute;
+  top: 100%;
+}
+
+/* Tablet */
+@media only screen and (min-width: 768px) {
+  .registrationCard {
+    max-width: 522px;
+  }
+}
+
+/* Desktop */
+@media only screen and (min-width: 1440px) {
+  .registrationCard {
+    max-width: 420px;
+  }
+}
