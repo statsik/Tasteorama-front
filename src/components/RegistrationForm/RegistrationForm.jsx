@@ -169,6 +169,13 @@ const RegistrationForm = () => {
                       className={s.error}
                       component="div"
                     />
+                  </div>
+                <div className={s.checkboxContainer}>
+                  <Field type="checkbox" name="agree" id="agree" className={s.checkbox} />
+                  <label htmlFor="agree" className={s.checkboxLabel}>
+                    I agree to the Terms of Service and Privacy Policy
+                  </label>
+                  <ErrorMessage name="agree" component="div" className={s.error} />
                 </div>
                 </div>
                 <button

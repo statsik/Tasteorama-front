@@ -194,6 +194,26 @@
   top: 100%;
 }
 
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  accent-color: #9b6c43; 
+}
+
+.checkboxLabel {
+  font-size: 14px;
+  color: #595d62;
+}
+
+
+
 /* Tablet */
 @media only screen and (min-width: 768px) {
   .registrationCard {
