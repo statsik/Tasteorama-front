@@ -74,7 +74,6 @@
 
 .label {
   align-self: stretch;
-  align-items: flex-start;
   font-size: 12px;
   letter-spacing: 0px;
 }
