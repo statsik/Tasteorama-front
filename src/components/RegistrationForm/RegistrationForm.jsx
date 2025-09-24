@@ -37,14 +37,17 @@ const validationSchema = Yup.object().shape({
 
 const RegistrationForm = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = (values) => {
     navigate('/create', { state: { formData: values } });
   };
 
-  const iconId = showPassword ? 'icon-eye-crossed' : 'icon-eye';
+  const iconId = showPassword ? 'icon-eye' : 'icon-eye-crossed';
+  const iconConfirmId = showConfirmPassword ? 'icon-eye' : 'icon-eye-crossed';
   const ariaLabel = showPassword ? 'Hide password' : 'Show password';
+  const ariaConfirmLabel = showConfirmPassword ? 'Hide password' : 'Show password';
 
   const eyeIcon = (
     <svg
@@ -53,6 +56,16 @@ const RegistrationForm = () => {
       aria-label={ariaLabel}
     >
       <use href={`/public/icons/icons-tasteorama.svg#${iconId}`}></use>
+    </svg>
+  );
+
+  const eyeConfirmIcon = (
+    <svg
+      className={s.eyeIcon}
+      onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+      aria-label={ariaConfirmLabel}
+    >
+      <use href={`/public/icons/icons-tasteorama.svg#${iconConfirmId}`}></use>
     </svg>
   );
 
@@ -152,7 +165,7 @@ const RegistrationForm = () => {
                     </label>
                     <div className={s.passwordField}>
                       <Field
-                        type={showPassword ? 'text' : 'password'}
+                        type={showConfirmPassword ? 'text' : 'password'}
                         name="confirmPassword"
                         className={`${s.input} ${
                           errors.confirmPassword && touched.confirmPassword
@@ -162,7 +175,7 @@ const RegistrationForm = () => {
                         placeholder="*********"
                         autoComplete="new-password"
                       />
-                      {eyeIcon}
+                      {eyeConfirmIcon}
                     </div>
                     <ErrorMessage
                       name="confirmPassword"

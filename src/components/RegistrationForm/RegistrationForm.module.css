@@ -138,9 +138,10 @@
   right: 8px;
   top: 50%;
   transform: translateY(-50%);
-  width: 24px;
-  height: 24px;
-  stroke: var(--secondary-icon-fill);
+  width: 13px;
+  height: 13px;
+  stroke: #000; 
+  stroke-width: 2px;
   fill: none;
   cursor: pointer;
 }

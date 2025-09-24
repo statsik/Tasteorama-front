@@ -36,7 +36,7 @@ const LoginForm = () => {
       });
   };
 
-  const iconId = showPassword ? 'icon-close-eye' : 'icon-open-eye';
+  const iconId = showPassword ? 'icon-eye' : 'icon-eye-crossed';
   const ariaLabel = showPassword ? 'Hide password' : 'Show password';
 
   const eyeIcon = (
@@ -45,7 +45,7 @@ const LoginForm = () => {
       onClick={() => setShowPassword(!showPassword)}
       aria-label={ariaLabel}
     >
-      <use href={`/icons.svg#${iconId}`}></use>
+      <use href={`/icons/icons-tasteorama.svg#${iconId}`}></use>
     </svg>
   );
 
