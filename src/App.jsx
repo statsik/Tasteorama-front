@@ -57,7 +57,7 @@ function App() {
               <Route path="saved" element={<SavedRecepiesPage />} />
             </Route>
 
-            <Route
+            {/* <Route
               path="create"
               element={
                 <PrivateRoute
@@ -65,6 +65,11 @@ function App() {
                   redirectTo="/login"
                 />
               }
+            /> */}
+
+            <Route
+              path="create"
+              element={<CreateRecepiesPage />}
             />
 
             <Route

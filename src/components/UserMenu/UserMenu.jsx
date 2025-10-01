@@ -49,7 +49,7 @@ const UserMenu = () => {
             <use href="/public/icons/icons-tasteorama.svg#icon-icon-exit"></use>
           </svg>
         </button>
-      </div>
+      </div>  
   );
 };
 
