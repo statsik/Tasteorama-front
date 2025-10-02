@@ -98,7 +98,9 @@ const CreateRecepiesForm = () => {
                 />
               ) : (
                 <div className={css.imagePlaceholder}>
-                  <p>Click to upload image</p>
+                    <svg className={css["icon-camera"]} width="52" height="52">
+                      <use href="/icons/icons-tasteorama.svg#icon-camera" />
+                  </svg>
                 </div>
               )}
             </div>
@@ -109,7 +111,7 @@ const CreateRecepiesForm = () => {
             <h2 className={css.sectionTitle}>General Information</h2>
 
             <div className={css.inputGroup}>
-              <label htmlFor="title">Recipe Title</label>
+              <label className={css["input-group-title"]} htmlFor="title">Recipe Title</label>
               <input 
                 id="title" 
                 name="title"
@@ -124,7 +126,7 @@ const CreateRecepiesForm = () => {
             </div>
 
             <div className={css.inputGroup}>
-              <label htmlFor="description">Recipe Description</label>
+              <label className={css["input-group-title"]} htmlFor="description">Recipe Description</label>
               <textarea 
                 id="description" 
                 name="description"
@@ -140,7 +142,7 @@ const CreateRecepiesForm = () => {
 
             <div className={css.rowGroup}>
               <div className={css.inputGroup}>
-                <label htmlFor="cookingTime">Cooking time in minutes</label>
+                <label className={css["input-group-title"]} htmlFor="cookingTime">Cooking time in minutes</label>
                 <input 
                   id="cookingTime" 
                   name="cookingTime"
@@ -157,7 +159,7 @@ const CreateRecepiesForm = () => {
             
             <div className={css.rowGroup}>
               <div className={css.inputGroupHalf}>
-                <label htmlFor="calories">Calories</label>
+                <label className={css["row-group-title"]} htmlFor="calories">Calories</label>
                 <input 
                   id="calories" 
                   name="calories"
@@ -172,7 +174,7 @@ const CreateRecepiesForm = () => {
               </div>
               
               <div className={css.inputGroupHalf}>
-                <label htmlFor="category">Category</label>
+                <label className={css["row-group-title"]} htmlFor="category">Category</label>
                 <select 
                   id="category" 
                   name="category"
@@ -198,7 +200,7 @@ const CreateRecepiesForm = () => {
                   <div>
                     {ingredients.length > 0 && ingredients.map((ingredient, index) => (
                       <div key={index} className={css.ingredientRow}>
-                        <div className={css.inputGroupHalf}>
+                        <div className={css.inputGroupIngridients}>
                           <label htmlFor={`ingredients.${index}.name`}>Name</label>
                           <select
                             id={`ingredients.${index}.name`}
@@ -221,7 +223,7 @@ const CreateRecepiesForm = () => {
                           </button>
                         </div>
 
-                        <div className={css.inputGroupHalf}>
+                        <div className={css.inputGroupIngridients}>
                           <label htmlFor={`ingredients.${index}.amount`}>Amount</label>
                           <input
                             id={`ingredients.${index}.amount`}

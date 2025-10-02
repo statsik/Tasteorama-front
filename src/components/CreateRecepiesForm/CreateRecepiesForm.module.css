@@ -1,20 +1,28 @@
 .form {
     display: flex;
     flex-direction: column;
-    gap: 20px; 
-    padding: 16px;
-    background-color: #fff;
-    max-width: 600px;
-    margin: 0 auto; 
+    padding: 48px 0;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.icon-camera {
+    stroke: #070707; 
+    fill: none; 
+    width: 52px;
+    height: 52px;
 }
 
 .sectionTitle {
-    font-size: 20px;
     font-weight: bold;
     color: #333;
-    margin-bottom: 5px;
+    margin-top: 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-style: 'SemiBold';
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
 }
 
 .inputGroup {
@@ -23,10 +31,23 @@
     width: 100%; 
 }
 
-.inputGroup label {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 4px;
+
+.input-group-title{
+    color: #070707;
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-style: 'Regular';
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+
+.input-group-title:nth-child(1){
+    margin-top: 16px;
+}
+.input-group-title:nth-child(2){
+    margin-top: 16px;
 }
 
 .input, .select, .textarea {
@@ -35,6 +56,7 @@
     border-radius: 4px;
     font-size: 16px;
     width: 100%; 
+    margin-top: 8px;
     box-sizing: border-box; 
 }
 
@@ -50,21 +72,20 @@
 
 .rowGroup {
     display: flex;
-    gap: 15px;
+    gap: 16px;
     width: 100%;
+    margin-top: 16px;
 }
 
 .inputGroupHalf {
-    flex-grow: 1; 
     display: flex;
     flex-direction: column;
-    position: relative; 
+    width: 100%;
 }
 
 .imageUploadContainer {
     width: 100%;
-    height: 200px;
-    border: 2px dashed #ccc;
+    height: 381px;
     border-radius: 8px;
     display: flex;
     justify-content: center;
@@ -72,7 +93,7 @@
     cursor: pointer;
     overflow: hidden;
     position: relative;
-    background-color: #f9f9f9;
+    background-color: var(--background-color-input-photo);
 }
 
 .imagePlaceholder {
@@ -88,8 +109,10 @@
 
 .ingredientRow {
     display: flex;
+    flex-direction: column;
+    width: 100%;
     gap: 15px;
-    margin-bottom: 10px;
+    margin-top: 32px;
 }
 
 .removeIngredientBtn {
@@ -108,17 +131,25 @@
     height: 100%;
     padding-right: 30px; 
 }
-
+.row-group-title{
+    font-weight: 400;
+    font-family: 'Montserrat';
+    font-style: 'Regular';
+    font-size: 18px;
+    line-height: 100%;
+    vertical-align: middle;
+    color: rgba(0, 0, 0, 1);
+}
 .addButton {
-    background-color: #e0e0e0;
-    color: #333;
-    border: none;
-    padding: 10px 15px;
+    background-color: rgba(155, 108, 67, 1);
+    color: rgba(255, 255, 255, 1);
+    border-radius: 20px;
+    padding: 12px 16px;
     border-radius: 4px;
     cursor: pointer;
     font-weight: 500;
-    margin-top: 5px;
-    transition: background-color 0.2s;
+    margin-top: 16px;
+    width: 100%
 }
 
 .addButton:hover {
@@ -126,26 +157,18 @@
 }
 
 .submitButton {
-    background-color: #B5C99A; 
-    color: white;
-    border: none;
-    padding: 12px 20px;
+    background-color: rgba(155, 108, 67, 1);
+    color: rgba(255, 255, 255, 1);
+    border-radius: 20px;
+    padding: 12px 16px;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 18px;
-    font-weight: bold;
-    transition: background-color 0.3s;
-    margin-top: 10px;
+    font-weight: 500;
+    margin-top: 16px;
+    width: 100%
 }
 
-.submitButton:hover:not(:disabled) {
-    background-color: #A0C49D;
-}
 
-.submitButton:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-}
 
 .error {
     color: #f44336;
@@ -154,12 +177,6 @@
 }
 
 @media (min-width: 768px) {
-    .form {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 30px;
-    }
-
     .imageUploadContainer {
         width: 40%;
         height: 350px;
@@ -172,7 +189,6 @@
     }
     
     .inputGroup, .rowGroup {
-        width: calc(60% - 30px); 
         order: 2;
     }
     

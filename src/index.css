@@ -1,8 +1,41 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/manrope-v19-cyrillic_latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/manrope-v19-cyrillic_latin-700.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Merienda';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../fonts/merienda-v21-latin-800.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../fonts/manrope-v19-cyrillic_latin-800.woff2') format('woff2');
+}
+
 :root {
   --font-family: 'Montserrat', sans-serif;
   --secondary-font-family: 'Merienda', sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  --backrgound-color-main:#fbfcf8;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -16,6 +49,7 @@
   --header-color: #FFFF;
   --background-color-reg: #FAF3E0;
   --background-color-inp: #FFFFFF;
+  --background-color-input-photo: #9f9f9f;
   --color-border: #D9D9D9;
   --color-title-reg: #000000;
   --color-text-input: #9F9F9F;
@@ -33,6 +67,7 @@ a {
 
 body {
   margin: 0;
+  background-color: var(--backrgound-color-main);
 }
 
 h1 {
