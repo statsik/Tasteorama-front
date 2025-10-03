@@ -76,8 +76,10 @@ const CreateRecepiesForm = () => {
 
         return (
           <Form className={css.form}>
-            
-            <div 
+            <div className={css["image-upload-container"]}>
+              <h2 className={css["form-title"]}>Add Recipe</h2>
+              <p className={css["form-upload"]}>Upload Photo</p>
+              <div 
               className={css.imageUploadContainer} 
               onClick={handleImageClick}
             >
@@ -107,7 +109,8 @@ const CreateRecepiesForm = () => {
             {touched.recipeImage && errors.recipeImage && (
               <div className={css.error}>{errors.recipeImage}</div>
             )}
-
+            </div>
+            <div className={css["main-create-section"]}>
             <h2 className={css.sectionTitle}>General Information</h2>
 
             <div className={css.inputGroup}>
@@ -194,14 +197,14 @@ const CreateRecepiesForm = () => {
             <h2 className={css.sectionTitle}>Ingredients</h2>
             
             <FieldArray name="ingredients">
-              {({ push, remove }) => {
+              {({ push }) => {
                 const ingredients = values.ingredients; 
                 return (
                   <div>
                     {ingredients.length > 0 && ingredients.map((ingredient, index) => (
                       <div key={index} className={css.ingredientRow}>
                         <div className={css.inputGroupIngridients}>
-                          <label htmlFor={`ingredients.${index}.name`}>Name</label>
+                          <label className={css.inputIngridientsPart} htmlFor={`ingredients.${index}.name`}>Name</label>
                           <select
                             id={`ingredients.${index}.name`}
                             name={`ingredients.${index}.name`}
@@ -213,18 +216,10 @@ const CreateRecepiesForm = () => {
                             <option value="Salt">Salt</option>
                             <option value="Water">Water</option>
                           </select>
-                          <button 
-                            type="button" 
-                            onClick={() => remove(index)} 
-                            className={css.removeIngredientBtn}
-                            title="Remove ingredient"
-                          >
-                            &times;
-                          </button>
                         </div>
 
                         <div className={css.inputGroupIngridients}>
-                          <label htmlFor={`ingredients.${index}.amount`}>Amount</label>
+                          <label className={css.inputIngridientsPart} htmlFor={`ingredients.${index}.amount`}>Amount</label>
                           <input
                             id={`ingredients.${index}.amount`}
                             name={`ingredients.${index}.amount`}
@@ -251,7 +246,6 @@ const CreateRecepiesForm = () => {
 
             <h2 className={css.sectionTitle}>Instructions</h2>
             <div className={css.inputGroup}>
-              <label htmlFor="instructions">Instructions</label>
               <textarea 
                 id="instructions" 
                 name="instructions"
@@ -272,8 +266,9 @@ const CreateRecepiesForm = () => {
             >
               Publish Recipe
             </button>
-
+          </div>
           </Form>
+          
         );
       }}
     </Formik>

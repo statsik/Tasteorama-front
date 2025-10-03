@@ -5,6 +5,25 @@
     border-radius: 8px;
 }
 
+.form-title{
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-style: 'SemiBold';
+    font-size: 48px;
+    line-height: 110.00000000000001%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color:rgba(0, 0, 0, 1);
+}
+
+.form-upload{
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-style: 'SemiBold';
+    font-size: 32px;
+    color: rgba(0, 0, 0, 1);;
+}
+
 .icon-camera {
     stroke: #070707; 
     fill: none; 
@@ -116,10 +135,7 @@
 }
 
 .removeIngredientBtn {
-    position: absolute;
-    top: 50%;
     right: 10px;
-    transform: translateY(-50%);
     background: none;
     border: none;
     color: #f44336;
@@ -139,6 +155,13 @@
     line-height: 100%;
     vertical-align: middle;
     color: rgba(0, 0, 0, 1);
+}
+.inputIngridientsPart{
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-style: 'Regular';
+    font-size: 18px;
+    color:rgba(0, 0, 0, 1);
 }
 .addButton {
     background-color: rgba(155, 108, 67, 1);
@@ -176,37 +199,26 @@
     margin-top: 4px;
 }
 
-@media (min-width: 768px) {
-    .imageUploadContainer {
-        width: 40%;
-        height: 350px;
-        order: 1;
+@media only screen and (min-width: 1440px) {
+    .form{
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+        align-items: flex-start;
     }
-    
-    .sectionTitle {
-        width: 100%; 
-        order: 3;
+    .form-upload{
+        font-family: 'Montserrat';
+        font-weight: 600;
+        font-size: 32px;
     }
-    
-    .inputGroup, .rowGroup {
+    .imageUploadContainer{
+        width: 391px;
+        height: 374px;
+    }
+    .image-upload-container{
         order: 2;
     }
-    
-    .sectionTitle:nth-of-type(2), .inputGroup:nth-of-type(2), .inputGroup:nth-of-type(3), .rowGroup:nth-of-type(1) {
-        order: 2; 
-    }
-    
-    .sectionTitle:nth-of-type(3) {
-        order: 4;
-        margin-top: 20px;
-    }
-
-    .ingredientRow, .inputGroup:last-of-type, .submitButton {
+    .main-create-section{
         width: 100%;
-        order: 5;
-    }
-
-    .submitButton {
-        margin-top: 20px;
     }
 }
