@@ -1,0 +1,13 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  pointer-events: all;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  opacity: 1;
+}

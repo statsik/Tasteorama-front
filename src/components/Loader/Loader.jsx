@@ -1,9 +1,25 @@
-import css from './Loader.module.css';
+import { ClipLoader } from 'react-spinners';
+import styles from './Loader.module.css';
 
 const Loader = () => {
-    return (
-        <></>
-    )
-}
+  return (
+    <div
+      className={styles.overlay}
+      role="status"
+      aria-live="polite"
+      aria-label="Loading content..."
+    >
+      <ClipLoader
+        size={100}
+        color="#9B6C43;"
+        aria-hidden="true"
+        cssOverride={{
+          borderWidth: '8px',
+          borderStyle: 'solid',
+        }}
+      />
+    </div>
+  );
+};
 
 export default Loader;
