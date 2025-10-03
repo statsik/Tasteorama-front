@@ -1,0 +1,35 @@
+.footerWrapper{
+    background-color: var(--background-color-footer);
+    
+}
+
+.footerContainer{
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+    gap: 32px;
+}
+
+.nav-recipes{
+    display: flex;
+    gap: 44px;
+    flex-direction: column;
+}
+
+@media only screen and (min-width: 1440px) {
+    .nav-recipes{
+        padding: 24px 0;
+    }
+    .footerContainer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .nav-recipes{
+        gap: 32px;
+        flex-direction: row;
+    }
+}
