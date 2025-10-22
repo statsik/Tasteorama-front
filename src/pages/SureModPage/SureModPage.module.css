@@ -1,0 +1,60 @@
+.sure-mode-wrapper{
+    padding: 56px 24px 32px 34px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: rgba(250, 243, 224, 1);
+    border-radius: 16px;
+    margin: 0 auto;
+    max-width: 420px;
+}
+
+.sure-mode-title{
+    color: rgba(0, 0, 0, 1);
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-style: 'SemiBold';
+    font-size: 32px;
+    text-align: center;
+}
+
+.sure-mode-description{
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-style: 'Regular';
+    font-size: 16px;
+    text-align: center;
+    color: rgba(0, 0, 0, 1);
+}
+
+.sure-mode-button-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+.sure-mode-button-login{
+    color:rgba(0, 0, 0, 1);
+    background-color: rgba(250, 243, 224, 1);
+    border: 1px solid rgba(0, 0, 0, 1);
+    padding: 16px 128px;
+}
+
+.sure-mode-button-register{
+    padding: 16px 118px;
+}
+
+@media only screen and (min-width: 768px) {
+    .sure-mode-wrapper{
+        padding: 56px 32px;
+    }
+    .sure-mode-button-wrapper{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .sure-mode-button-login,
+    .sure-mode-button-register{
+        padding: 8px 56.5px;
+    }
+}
