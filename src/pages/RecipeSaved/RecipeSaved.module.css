@@ -1,0 +1,34 @@
+.recipe-saved-wrapper{
+    padding: 64px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 362px;
+}
+.recipe-saved-title{
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-style: 'SemiBold';
+    text-align: center;
+    color: rgba(0, 0, 0, 1);
+}
+
+.recipe-saved-desc{
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    color: rgba(0, 0, 0, 1);
+}
+
+.recipe-saved-button{
+    padding: 12px 100px;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-style: 'SemiBold';
+    font-size: 16px;
+    vertical-align: middle;
+    color:rgba(255, 255, 255, 1);
+    background-color: rgba(155, 108, 67, 1);
+    border-radius: 16px;
+}
